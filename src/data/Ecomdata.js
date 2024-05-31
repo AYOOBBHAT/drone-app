@@ -1,22 +1,3 @@
-// export const Ecomdata = [
-//     { id: 1, name: "Skyzone Cobra x v2", path: "assets/ecomImages/Skyzone-Cobra-x-v2.png" },
-//     { id: 2, name: "EV800D Diversity goggles", path: "assets/ecomImages/EV800D-Diversity-goggles.png" },
-//     { id: 3, name: "Geprc cl35", path: "assets/ecomImages/Geprc-cl35.png" },
-//     { id: 4, name: "Iflight Nazgul5", path: "assets/ecomImages/Iflight-Nazgul5.png" },
-//     { id: 5, name: "Skystart H7 hd", path: "assets/ecomImages/SkystartH7hd.png" },
-//     { id: 6, name: "Foxeer reaper AIO", path: "assets/ecomImages/Foxeer-reaper-AIO.png" },
-//     { id: 7, name: "Flysky X6B", path: "assets/ecomImages/Flysky-X6B.png" },
-//     { id: 8, name: "Rp1 elrs", path: "assets/ecomImages/Rp1-elrs.png" },
-//     { id: 9, name: "Radiomaster Tx-12", path: "assets/ecomImages/Radiomaster-Tx-12.png" },
-//     { id: 10, name: "Radiomaster Tx-16", path: "assets/ecomImages/Radiomaster-Tx-16.png" },
-//     { id: 11, name: "Flysky Fs-i6", path: "assets/ecomImages/Flysky-Fs-i6.png" },
-//     { id: 12, name: "HGLRC zeus 800mw", path: "assets/ecomImages/HGLRC-zeus-800m.png" },
-//     { id: 13, name: "Foxeer Trex micro", path: "assets/ecomImages/FoxeerTrex-micro.png" },
-//     { id: 14, name: "Foxeer lollipop 4", path: "assets/ecomImages/Foxeer-lollipop4.png" },
-//     { id: 15, name: "Gemfan 51433", path: "assets/ecomImages/Gemfan-51433.png" },
-//     { id: 16, name: "R2207 2450kv", path: "assets/ecomImages/R2207-2450kv.png" }
-// ];
-
 
 import SkyzoneCobra from '../assets/ecomImages/Skyzone-Cobra-x-v2.png';
 import EV800D from '../assets/ecomImages/EV800D-Diversity-goggles.png';

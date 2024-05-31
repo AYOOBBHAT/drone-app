@@ -1,23 +1,70 @@
-import React from 'react';
+// import React from 'react';
+// import { Link } from 'react-router-dom';
+
+// import { Productdata } from '../data/Productdata'; 
+
+
+// function Products() {
+//   return (
+//     <div className="products">
+//       <h1>products</h1>
+//       <div className="items-grid">
+//         {Productdata.map((item) => (
+//           <div key={item.id} className="item-card">
+//             <Link to={`/item/${item.id}`}>
+//               <img src={item.path} alt={item.name} className="item-image" />
+//               <h2>{item.name}</h2>
+//             </Link>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Products;
+
+
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { Productdata } from '../data/Productdata'; 
-
+import ContactForm from '../components/ContactForm';
 
 function Products() {
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleButtonClick = (item) => {
+    setSelectedItem(item);
+  };
+
+  const handleCloseForm = () => {
+    setSelectedItem(null);
+  };
+
   return (
-    <div className="products">
-      <h1>products</h1>
-      <div className="items-grid">
+    <div className="p-4">
+      <h1 className="text-3xl font-bold mb-4">Products</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {Productdata.map((item) => (
-          <div key={item.id} className="item-card">
+          <div key={item.id} className="border p-4 rounded-lg shadow-md">
             <Link to={`/item/${item.id}`}>
-              <img src={item.path} alt={item.name} className="item-image" />
-              <h2>{item.name}</h2>
+              <img src={item.path} alt={item.name} className="w-full h-48 object-cover mb-4" />
+              <h2 className="text-xl font-semibold">{item.name}</h2>
             </Link>
+            <button
+              onClick={() => handleButtonClick(item)}
+              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition duration-300"
+            >
+              Click Me
+            </button>
           </div>
         ))}
       </div>
+      {selectedItem && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <ContactForm item={selectedItem} onClose={handleCloseForm} />
+        </div>
+      )}
     </div>
   );
 }
