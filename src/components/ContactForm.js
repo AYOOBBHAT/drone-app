@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import emailjs from 'emailjs-com';
 
 function ContactForm({ item, onClose }) {
   const [email, setEmail] = useState('');
@@ -9,19 +9,36 @@ function ContactForm({ item, onClose }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      await axios.post('http://localhost:3001/send-email', {
-        email,
-        phone,
-        address,
-        message,
-        item,
-      });
-      alert('Email sent successfully');
-      onClose();
+
+    
+    const formData = {
+      email,
+      phone,
+      address,
+      message,
+      item: item.name,  
+    };
+
+    
+
+      try {
+        
+        await emailjs.send(
+          'service_ucsg2u9',    
+          'template_xh0javp',   
+          formData,
+          'LsNle7uL7XcsY8ntV'        
+        );
+        alert('Email sent successfully');
+        onClose();
+      
+
+
+
     } catch (error) {
       console.error('Error sending email:', error);
-      alert('Error sending email');
+      alert('Error sending email: ' + error.message); 
+    
     }
   };
 
@@ -87,3 +104,5 @@ function ContactForm({ item, onClose }) {
 }
 
 export default ContactForm;
+
+
