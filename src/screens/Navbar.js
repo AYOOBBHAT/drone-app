@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { FaHome, FaShoppingCart, FaUser, FaBlog, FaPhone } from 'react-icons/fa';
+
 
 
 const Navbar = () => {

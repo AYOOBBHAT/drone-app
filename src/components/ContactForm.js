@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function ContactForm({ item, onClose }) {
   const [email, setEmail] = useState('');
@@ -6,11 +7,22 @@ function ContactForm({ item, onClose }) {
   const [address, setAddress] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log({ email, phone, address, message, item });
-    onClose();
+    try {
+      await axios.post('http://localhost:3001/send-email', {
+        email,
+        phone,
+        address,
+        message,
+        item,
+      });
+      alert('Email sent successfully');
+      onClose();
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Error sending email');
+    }
   };
 
   return (

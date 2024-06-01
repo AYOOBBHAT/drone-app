@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Ecomdata } from '../data/Ecomdata';
 import ContactForm from '../components/ContactForm';
-// import './Ecom.css'; // Uncomment if you have a CSS file
+
 
 function Ecommerce() {
   const [selectedItem, setSelectedItem] = useState(null);

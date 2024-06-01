@@ -1,34 +1,7 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-
-// import { Productdata } from '../data/Productdata'; 
-
-
-// function Products() {
-//   return (
-//     <div className="products">
-//       <h1>products</h1>
-//       <div className="items-grid">
-//         {Productdata.map((item) => (
-//           <div key={item.id} className="item-card">
-//             <Link to={`/item/${item.id}`}>
-//               <img src={item.path} alt={item.name} className="item-image" />
-//               <h2>{item.name}</h2>
-//             </Link>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Products;
-
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Productdata } from '../data/Productdata'; 
-import ContactForm from '../components/ContactForm';
+import ContactForm from '../components/ContactForm'; // Import the ContactForm component
 
 function Products() {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -55,7 +28,7 @@ function Products() {
               onClick={() => handleButtonClick(item)}
               className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition duration-300"
             >
-              Click Me
+              Contact Seller
             </button>
           </div>
         ))}
